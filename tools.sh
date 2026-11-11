@@ -50,7 +50,7 @@ login() {
     echo -e "${h}[+] Masa Aktif s/d: $EXPIRED${r}"
     sleep 2
     export USER_ROLE="$ROLE"
-    export USER_TELU="$TELU"
+    export USER_WA="$TELU"
     export USER_NAME="$user_in"
     export USER_EXP="$EXPIRED"
 }
@@ -63,7 +63,7 @@ header() {
     echo -e "${u}<<<< NOTIFIKASI SYSTEM >>>>${r}"
     echo -e "${c}========================================================${r}"
     echo -e "${h}+ Entity          : ${p}$USER_NAME${r}"
-    echo -e "${h}+ Telegram        : ${p}$USER_TELU${r}"
+    echo -e "${h}+ WhatsApp        : ${p}$USER_WA${r}"
     echo -e "${h}+ Role            : ${m}$USER_ROLE${r}"
     echo -e "${h}+ Expired         : ${m}$USER_EXP${r}"
     echo -e "${h}+ Waktu           : ${p}$WAKTU${r}"
