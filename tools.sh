@@ -14,7 +14,7 @@ loading() {
 login() {
     clear
     echo -e "${c}========================================================${r}"
-    echo -e "${u}             HIDZ SYSTEM LOGIN GATEWAY          ${r}"
+    echo -e "${u}             HIDZ SYSTEM LOGIN          ${r}"
     echo -e "${c}========================================================${r}"
     read -p "Username : " user_in
     read -p "Password: " pass_in
