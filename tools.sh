@@ -17,7 +17,7 @@ login() {
     echo -e "${u}             HIDZ SYSTEM LOGIN GATEWAY          ${r}"
     echo -e "${c}========================================================${r}"
     read -p "Username : " user_in
-    read -p "Kode Akses: " kode_in
+    read -p "Password: " pass_in
     
     # Ambil data dari Gist
     DB_DATA=$(curl -sL "$DB_URL" | tr -d "\r")
@@ -27,13 +27,13 @@ login() {
         echo -e "${m}[-] Username tidak terdaftar!${r}"; sleep 2; login
     fi
     
-    DB_KODE=$(echo "$USER_DATA" | cut -d'|' -f4)
+    DB_PASS=$(echo "$USER_DATA" | cut -d'|' -f4)
     ROLE=$(echo "$USER_DATA" | cut -d'|' -f3)
     TELU=$(echo "$USER_DATA" | cut -d'|' -f2)
     EXPIRED=$(echo "$USER_DATA" | cut -d'|' -f5)
     
-    if [ "$kode_in" != "$DB_KODE" ]; then
-        echo -e "${m}[-] Kode Akses Salah! Akses Ditolak.${r}"; sleep 2; login
+    if [ "$pass_in" != "$DB_PASS" ]; then
+        echo -e "${m}[-] Password Salah! Akses Ditolak.${r}"; sleep 2; login
     fi
 
     # Cek Expired (Bypass kalau simbol Infinity)
