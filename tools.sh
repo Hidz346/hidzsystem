@@ -2,7 +2,7 @@
 
 # Warna ANSI
 m='\033[1;31m'; h='\033[1;32m'; k='\033[1;33m'; b='\033[1;34m'; u='\033[1;35m'; c='\033[1;36m'; p='\033[1;37m'; r='\033[0m'
-DB_URL="RAW_URL_DISINI" # GANTI DENGAN URL RAW GIST LU
+DB_URL="LINK_GIST_LU" # GANTI DENGAN URL RAW GIST LU
 
 loading() {
     echo -ne "${k}[*] Menghubungkan ke Server Hidz...${r}"
@@ -36,12 +36,14 @@ login() {
         echo -e "${m}[-] Kode Akses Salah! Akses Ditolak.${r}"; sleep 2; login
     fi
 
-    # Cek Expired (Bandingin tanggal hari ini sama tanggal di Gist)
+    # Cek Expired (Bypass kalau simbol Infinity)
     TODAY=$(date +%Y-%m-%d)
-    if [[ "$TODAY" > "$EXPIRED" ]]; then
-        echo -e "${m}[-] MASA AKTIF HABIS! (Expired: $EXPIRED)${r}"
-        echo -e "${k}[*] Hubungi Developer: wa.me/6289679177876 untuk perpanjang.${r}"
-        sleep 4; login
+    if [ "$EXPIRED" != "∞" ]; then
+        if [[ "$TODAY" > "$EXPIRED" ]]; then
+            echo -e "${m}[-] MASA AKTIF HABIS! (Expired: $EXPIRED)${r}"
+            echo -e "${k}[*] Hubungi Developer: wa.me/6289679177876 untuk perpanjang.${r}"
+            sleep 4; login
+        fi
     fi
     
     echo -e "${h}[+] Login Berhasil! Selamat datang, $user_in ($ROLE)${r}"
@@ -68,7 +70,7 @@ header() {
     echo -e "${c}========================================================${r}"
 }
 
-# --- MENU (SAMA SEPERTI SEBELUMNYA) ---
+# --- MENU ---
 menu() {
     echo -e "${m}           LEMARI TOOLS HIDZ ADA DIBAWAH           ${r}"
     echo -e "${p}================================================${r}"
