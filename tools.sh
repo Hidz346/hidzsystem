@@ -2,7 +2,7 @@
 
 # Warna ANSI
 m='\033[1;31m'; h='\033[1;32m'; k='\033[1;33m'; b='\033[1;34m'; u='\033[1;35m'; c='\033[1;36m'; p='\033[1;37m'; r='\033[0m'
-DB_URL="https://gist.githubusercontent.com/Hidz346/3913a2a08f7a45cc2c4c431616ac2cc9/raw/d450d4b0cde61280504bc696cdf572fee9cf5672/db_users.txt" # GANTI DENGAN URL RAW GIST LU
+DB_URL="https://gist.githubusercontent.com/Hidz346/3913a2a08f7a45cc2c4c431616ac2cc9/raw/4feb029f2dbd6df3a404a8af56330b5858ed868e/db_users.txt" # GANTI DENGAN URL RAW GIST LU
 
 loading() {
     echo -ne "${k}[*] Menghubungkan ke Server Hidz...${r}"
